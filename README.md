@@ -89,6 +89,7 @@ you can't use your account private key as your domain private key!
 ```sh
 #generate a domain private key (if you haven't already)
 openssl genrsa 4096 > domain.key
+# or, for ECDSA : openssl ecparam -name prime256v1 -genkey -out domain.key
 
 #for a single domain
 openssl req -new -sha256 -key domain.key -subj "/CN=yoursite.com" > domain.csr
